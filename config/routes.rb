@@ -1,5 +1,7 @@
 Globalize3Example::Application.routes.draw do
-  resources :pages
+  scope "(:locale)", :locale => /en|es/ do
+    resources :pages
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
