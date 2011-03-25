@@ -7,6 +7,11 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<p>
+  Switch locale: <% I18n.available_locales.each do |l| %>
+    <%= link_to_unless (l == I18n.locale), l, localize_current_path(l) %>
+  <% end %>
+</p>
 
 <%= yield %>
 
